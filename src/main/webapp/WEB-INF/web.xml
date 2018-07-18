@@ -1,0 +1,48 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+         http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+    <!-- 配置监听器 -->
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
+
+    <!-- 如果修改 Spring 配置文件的位置和名称，则通过以下方式进行声明全局配置文件 -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/springmvc-servlet.xml</param-value>
+    </context-param>
+
+    <!-- 配置 DispatcherServlet 对 url 进行过滤 -->
+    <servlet>
+        <servlet-name>springmvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+
+        <!-- 显示配置用于解析 DispatcherServlet 的配置文件 -->
+        <!-- 如果不显示指定，则 Spring MVC 会自动扫描 WEB-INF 下以 servlet-name 标签声明的名称开头以 servlet 结尾的配置文件 -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/springmvc-servlet.xml</param-value>
+        </init-param>
+        <!-- 显示指定加载顺序-->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <!-- 如果声明 /* 则会拦截所有请求，包括 action 返回的 .jsp 页面 -->
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <!-- 配置欢迎页 -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
