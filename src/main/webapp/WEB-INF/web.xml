@@ -17,7 +17,7 @@
     <!-- 如果修改 Spring 配置文件的位置和名称，则通过以下方式进行声明全局配置文件 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/springmvc-servlet.xml</param-value>
+        <param-value>classpath:spring/springmvc.xml</param-value>
     </context-param>
 
     <!-- 配置 DispatcherServlet 对 url 进行过滤 -->
@@ -29,7 +29,7 @@
         <!-- 如果不显示指定，则 Spring MVC 会自动扫描 WEB-INF 下以 servlet-name 标签声明的名称开头以 servlet 结尾的配置文件 -->
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>/WEB-INF/springmvc-servlet.xml</param-value>
+            <param-value>classpath:spring/springmvc.xml</param-value>
         </init-param>
         <!-- 显示指定加载顺序-->
         <load-on-startup>1</load-on-startup>
