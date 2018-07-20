@@ -18,7 +18,7 @@ public class StudentController {
     @Autowired
     private IStudentService studentService;
 
-    @RequestMapping("/student")
+    @RequestMapping("/list")
     public String get() {
         List<Student> students = studentService.selectByCondition(new Student());
         String jsonResult = com.alibaba.fastjson.JSON.toJSONString(students);
