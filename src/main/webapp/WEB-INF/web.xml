@@ -31,7 +31,7 @@
     <!-- 如果修改 Spring 配置文件的位置和名称，则通过以下方式进行声明全局配置文件 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring/applicationContext-*.xml</param-value>
+        <param-value>classpath:spring/applicationContext.xml</param-value>
     </context-param>
 
     <!--普通MVC前端控制器-->
