@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hit.dao.StudentMapper">
     <resultMap id="BaseResultMap" type="com.hit.bean.Student">
-        <id column="Uid" jdbcType="BINARY" property="uid"/>
+        <id column="Uid" jdbcType="INTEGER" property="uid"/>
         <result column="Name" jdbcType="VARCHAR" property="name"/>
         <result column="Age" jdbcType="INTEGER" property="age"/>
         <result column="ClassId" jdbcType="INTEGER" property="classid"/>

@@ -7,16 +7,16 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  * @date 18/07/20
  */
 public class Student {
-    private byte[] uid;
+    private Integer uid;
     private String name;
     private Integer age;
     private Integer classid;
 
-    public byte[] getUid() {
+    public Integer getUid() {
         return uid;
     }
 
-    public void setUid(byte[] uid) {
+    public void setUid(Integer uid) {
         this.uid = uid;
     }
 
