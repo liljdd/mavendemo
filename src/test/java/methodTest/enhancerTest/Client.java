@@ -1,4 +1,4 @@
-package MethodTest.EnhancerTest;
+package methodTest.enhancerTest;
 
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
@@ -13,18 +13,19 @@ import java.lang.reflect.Method;
 public class Client {
     /**
      * 基于子类的动态代理
-     * 	要求：
-     * 		被代理对象不能是最终类
-     * 	用到的类：
-     * 		Enhancer
-     * 	用到的方法：
-     * 		create(Class, Callback)
-     * 	方法的参数：
-     * 		Class：被代理对象的字节码
-     * 		Callback：如何代理
+     * 要求：
+     * 被代理对象不能是最终类
+     * 用到的类：
+     * Enhancer
+     * 用到的方法：
+     * create(Class, Callback)
+     * 方法的参数：
+     * Class：被代理对象的字节码
+     * Callback：如何代理
+     *
      * @param args
      */
-    public static void  main(String[] args) {
+    public static void main(String[] args) {
         final Actor actor = new Actor();
 
         Actor cglibActor = (Actor) Enhancer.create(actor.getClass(),
@@ -43,16 +44,16 @@ public class Client {
                         String name = method.getName();
                         Float money = (Float) args[0];
                         Object rtValue = null;
-                        if("basicAct".equals(name)){
+                        if ("basicAct".equals(name)) {
                             //基本演出
-                            if(money > 2000){
-                                rtValue = method.invoke(actor, money/2);
+                            if (money > 2000) {
+                                rtValue = method.invoke(actor, money / 2);
                             }
                         }
-                        if("dangerAct".equals(name)){
+                        if ("dangerAct".equals(name)) {
                             //危险演出
-                            if(money > 5000){
-                                rtValue = method.invoke(actor, money/2);
+                            if (money > 5000) {
+                                rtValue = method.invoke(actor, money / 2);
                             }
                         }
                         return rtValue;

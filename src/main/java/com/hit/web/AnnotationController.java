@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class AnnotationController {
     // 请求映射地址 http://localhost:8080/gitcode/test，其中 8080 为默认端口
-   @RequestMapping(value = "/test")
+    @RequestMapping(value = "/test")
     public String goTest(HttpServletRequest request) {
         // 输出请求 URL 路径
         System.out.println(request.getRequestURL());

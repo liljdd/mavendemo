@@ -35,7 +35,7 @@ public class StudentController {
         s.setClassid(6);
         s.setName("jim");
         int id = studentService.insertSelective(s);
-        System.out.println("=============="+id);
+        System.out.println("==============" + id);
         return s;
     }
 

@@ -8,7 +8,7 @@
         <result column="ClassId" jdbcType="INTEGER" property="classid"/>
     </resultMap>
     <sql id="Base_Column_List">
-             Uid, Name, Age, ClassId
+        Uid, Name, Age, ClassId
     </sql>
     <select id="selectByPrimaryKey" parameterType="byte[]" resultMap="BaseResultMap">
         select
@@ -37,15 +37,15 @@
         </where>
     </select>
     <delete id="deleteByPrimaryKey" parameterType="byte[]">
-             delete from student
-             where Uid = #{uid,jdbcType=BINARY}
-         </delete>
+        delete from student
+        where Uid = #{uid,jdbcType=BINARY}
+    </delete>
     <insert id="insert" parameterType="com.hit.bean.Student">
-             insert into student (Uid, Name, Age,
-             ClassId)
-             values (#{uid,jdbcType=BINARY}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER},
-             #{classid,jdbcType=INTEGER})
-         </insert>
+        insert into student (Uid, Name, Age,
+        ClassId)
+        values (#{uid,jdbcType=BINARY}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER},
+        #{classid,jdbcType=INTEGER})
+    </insert>
     <insert id="insertSelective" parameterType="com.hit.bean.Student">
         insert into student
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -93,10 +93,10 @@
         where Uid = #{uid,jdbcType=BINARY}
     </update>
     <update id="updateByPrimaryKey" parameterType="com.hit.bean.Student">
-             update student
-             set Name = #{name,jdbcType=VARCHAR},
-             Age = #{age,jdbcType=INTEGER},
-             ClassId = #{classid,jdbcType=INTEGER}
-             where Uid = #{uid,jdbcType=BINARY}
+        update student
+        set Name = #{name,jdbcType=VARCHAR},
+        Age = #{age,jdbcType=INTEGER},
+        ClassId = #{classid,jdbcType=INTEGER}
+        where Uid = #{uid,jdbcType=BINARY}
     </update>
 </mapper>

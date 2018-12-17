@@ -15,6 +15,7 @@ import java.util.List;
 public class StudentService implements IStudentService {
     @Autowired
     private StudentMapper studentMapper;
+
     @Override
     public int deleteByPrimaryKey(byte[] uid) {
         return studentMapper.deleteByPrimaryKey(uid);

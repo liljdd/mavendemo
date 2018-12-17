@@ -1,4 +1,4 @@
-package MethodTest;
+package methodTest;
 
 import com.mysql.jdbc.Connection;
 import org.junit.Test;
